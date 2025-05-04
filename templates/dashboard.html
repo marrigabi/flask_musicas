@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered-body">
+    <div class="card">
+        <h2>Olá, {{ usuario }} 👋</h2>
+        <p>O que você deseja fazer hoje?</p>
+        <div class="btn-group">
+            <a class="btn" href="{{ url_for('gerenciar_musicas') }}">🎵 Gerenciar Músicas</a>
+            <a class="btn" href="{{ url_for('logout') }}">🚪 Sair</a>
+        </div>
+    </div>
+</body>
+</html>

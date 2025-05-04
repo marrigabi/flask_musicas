@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Minhas Músicas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered-body">
+    <div class="login-container">
+        <h2>🎵 Login</h2>
+        
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="usuario" placeholder="Usuário" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p class="footer-text">Ainda não tem conta? Fale com o administrador.</p>
+    </div>
+</body>
+</html>

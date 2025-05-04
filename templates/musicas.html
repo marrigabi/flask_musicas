@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Músicas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered-body">
+    <div class="card musicas-card">
+        <h2>🎧 Suas Músicas</h2>
+
+        {% if musicas %}
+            <ul class="musica-list">
+                {% for musica in musicas %}
+                    <li>{{ musica }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Você ainda não adicionou nenhuma música.</p>
+        {% endif %}
+
+        <hr>
+
+        <h3>Adicionar Música</h3>
+        <form method="POST">
+            <input type="hidden" name="acao" value="adicionar">
+            <input type="text" name="nome" placeholder="Nome da música" required>
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <h3>Remover Música</h3>
+        <form method="POST">
+            <input type="hidden" name="acao" value="remover">
+            <input type="text" name="nome" placeholder="Nome da música" required>
+            <button type="submit">Remover</button>
+        </form>
+
+        <h3>Editar Música</h3>
+        <form method="POST">
+            <input type="hidden" name="acao" value="editar">
+            <input type="text" name="antiga" placeholder="Nome atual" required>
+            <input type="text" name="nome" placeholder="Novo nome" required>
+            <button type="submit">Editar</button>
+        </form>
+
+        <a class="btn back-btn" href="{{ url_for('dashboard') }}">⬅ Voltar</a>
+    </div>
+</body>
+</html>

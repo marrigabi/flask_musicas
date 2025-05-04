@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem-vindo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered-body">
+    <div class="card">
+        <h1>🎶 Bem-vindo ao MusicApp</h1>
+        <p>Gerencie suas músicas favoritas com facilidade.</p>
+        <a class="btn" href="{{ url_for('login') }}">Fazer Login</a>
+    </div>
+</body>
+</html>
