@@ -65,17 +65,39 @@ flask_musicas/
 
 ---
 
-##  Como Executar
 
-### 1. Instalar dependência
+##  Como rodar o projeto
+
+###  1. Clonar o repositório
 
 ``
-pip install flask
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 ``
-### 2. Executar o app
+### 2. Criar o ambiente virtual
+
+``
+python -m venv .venv
+``
+
+### 3. Ativar o ambiente virtual
+
+``
+.venv\\Scripts\\activate
+``
+
+### 4. Instalar dependências
+
+``
+pip install -r requirements.txt
+``
+
+### 5. Rodar servidor Flask
+
 ``
 python app.py
 ``
-### 3. Acessar app
+
+### 6. Acessar app
 
 Acesse em: http://localhost:5000
